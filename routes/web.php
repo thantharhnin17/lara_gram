@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\FollowsController;
 use App\Http\Controllers\ProfilesController;
 
 /*
@@ -30,3 +31,6 @@ Route::patch('/profile/{user}', [ProfilesController::class, 'update'])->name('pr
 Route::get('/post/create', [PostsController::class, 'create']);
 Route::post('/post', [PostsController::class, 'store']);
 Route::get('/post/{post}', [PostsController::class, 'show']);
+
+
+Route::post('follow/{user}', [FollowsController::class, 'store']);
